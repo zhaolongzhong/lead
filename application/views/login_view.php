@@ -3,13 +3,13 @@
 <table>
 <form method="POST" action="<?php echo base_url();?>login/process">
 <tr><td>
-Username: </td><td><input type="text" name="username" size=40">
+Username: </td><td><input type="text" name="username" size=25">
 </tr></td>
 <tr><td>
-Password: </td><td><input type="password" name="password" size=40">
+Password: </td><td><input type="password" name="password" size=25">
 </tr></td>
 <tr><td>
-<input type="submit" value="submit">
+<input type="submit" value="Login">
 </tr></td>
 </table>
 </form>
