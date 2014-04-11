@@ -13,6 +13,13 @@ class Volunteer extends CI_Controller {
 		$this->load->view('volunteer_view', $data);
 	}
 
+	function delete()
+	{
+		$id = $this->uri->segment(3);
+		$this->load->model('volunteer_model');
+        $this->volunteer_model->delete($id);
+        $this->index();
+	}
 	public function do_logout(){
         $this->session->sess_destroy();
         redirect('login');

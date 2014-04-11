@@ -57,7 +57,9 @@ text-align:left;
 			<td><?php echo $volunteer->StateCode; ?></td>
 			<td><?php echo $volunteer->PrimaryPhone; ?></td>
 			<td><?php echo $volunteer->AltPhone; ?></td>
-			<td><button type="button">Edit</button><button type="button">Delete</button></td>
+			<td><button type="button">Edit</button>
+			<a href="<?php echo base_url(); ?>volunteer/delete/<?php echo $volunteer->VID; ?>">Delete</a>
+			</td></td>
 		<tr>
 		<?php
 		}

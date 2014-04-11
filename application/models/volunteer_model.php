@@ -9,5 +9,10 @@ class Volunteer_model extends CI_Model{
         $query = $this->db->get('Volunteers');
         return $query;
     }
+    function delete($vid)
+    {
+    	$this->db->where('VID',$vid);
+        $this->db->delete('Volunteers');
+    }
 }
 ?>
