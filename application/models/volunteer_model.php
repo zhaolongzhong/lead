@@ -14,7 +14,17 @@ class Volunteer_model extends CI_Model{
     {
         $this->db->insert('Volunteers',$data);
     }
-    
+
+    function select($VID)
+    {
+        $query = $this->db->get_where('Volunteers', array('VID' =>$VID));
+        return $query;
+    }
+    function update($data,$vid)
+    {
+        $this->db->where('VID', $vid);
+        $this->db->update('Volunteers', $data); 
+    }
     function delete($vid)
     {
     	$this->db->where('VID',$vid);
