@@ -26,7 +26,7 @@ text-align:left;
 <form action="newvolunteer"><input type="submit" value="Added a new volunteer"></form>
 
 <div>
-	<table style="width:900px">
+	<table style="width:1200px">
 		<tr>
 		 	<th>VID</th>
 		 	<th>Age</th>
