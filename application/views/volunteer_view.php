@@ -28,12 +28,12 @@ text-align:left;
 <div>
 	<table style="width:1200px">
 		<tr>
-		 	<th>VID</th>
+		 	<th>Email</th>
 		 	<th>Age</th>
 			<th>Fname</th>		
 			<th>Lname</th>
 			<th>Active</th>
-			<th>Email</th>
+			<th>Approved</th>
 			<th>Address</th>
 			<th>City</th>
 			<th>State</th>
@@ -46,20 +46,19 @@ text-align:left;
 		{
 		?>
 		<tr>
-			<td><?php echo $volunteer->VID; ?></td>
-			<td><?php echo $volunteer->Age; ?></td>
-			<td><?php echo $volunteer->Fname; ?></td>
-			<td><?php echo $volunteer->Lname; ?></td>
-			<td><?php echo $volunteer->ActiveVolunteer; ?></td>
-			<td><?php echo $volunteer->Email; ?></td>
-			<td><?php echo $volunteer->StreetAddress; ?></td>
-			<td><?php echo $volunteer->City; ?></td>
-			<td><?php echo $volunteer->StateCode; ?></td>
-			<td><?php echo $volunteer->PrimaryPhone; ?></td>
-			<td><?php echo $volunteer->AltPhone; ?></td>
+			<td><?php echo $volunteer->email; ?></td>
+			<td><?php echo $volunteer->age; ?></td>
+			<td><?php echo $volunteer->fname; ?></td>
+			<td><?php echo $volunteer->lname; ?></td>
+			<td><?php echo $volunteer->activevolunteer; ?></td>
+			<td><?php echo $volunteer->approved; ?></td>
+			<td><?php echo $volunteer->streetaddress; ?></td>
+			<td><?php echo $volunteer->city; ?></td>
+			<td><?php echo $volunteer->statecode; ?></td>
+			<td><?php echo $volunteer->primaryphone; ?></td>
+			<td><?php echo $volunteer->altphone; ?></td>
 			<td>
-			<a href="<?php echo base_url(); ?>volunteer_update?vid=<?php echo $volunteer->VID; ?>">Edit</a>
-			<a href="<?php echo base_url(); ?>volunteer/delete/<?php echo $volunteer->VID; ?>">Delete</a>
+			<a href="<?php echo base_url(); ?>volunteer_update?email=<?php echo $volunteer->email; ?>">Edit</a>
 			</td>
 		<tr>
 		<?php

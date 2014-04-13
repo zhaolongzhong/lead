@@ -15,19 +15,19 @@ class Volunteer_model extends CI_Model{
         $this->db->insert('Volunteers',$data);
     }
 
-    function select($VID)
+    function select($email)
     {
-        $query = $this->db->get_where('Volunteers', array('VID' =>$VID));
+        $query = $this->db->get_where('Volunteers', array('email' =>$email));
         return $query;
     }
-    function update($data,$vid)
+    function update($data,$email)
     {
-        $this->db->where('VID', $vid);
+        $this->db->where('email', $email);
         $this->db->update('Volunteers', $data); 
     }
-    function delete($vid)
+    function delete($email)
     {
-    	$this->db->where('VID',$vid);
+    	$this->db->where('email',$email);
         $this->db->delete('Volunteers');
     }
 }
