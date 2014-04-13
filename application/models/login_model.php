@@ -40,5 +40,10 @@ class Login_model extends CI_Model{
         $query = $this->db->get('UserAuthentication');
         return $query;
     }
+    function delete($uid)
+    {
+        $this->db->where('uid',$uid);
+        $this->db->delete('UserAuthentication');
+    }
 }
 ?>
