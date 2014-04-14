@@ -21,13 +21,15 @@
         <div class="navbar-collapse collapse" id="navbar-main">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="" id="themes">Themes <span class="caret"></span></a>
+              <a class="dropdown-toggle" data-toggle="dropdown" href="" id="themes">Pages <span class="caret"></span></a>
               <ul class="dropdown-menu" aria-labelledby="themes">
                 <li><a href="">Default</a></li>
                 <li class="divider"></li>
-                <li><a href="">Link</a></li>
-                <li><a href="">Link</a></li>
-                <li><a href="">Link</a></li>
+                  <li><a href="<?php echo base_url();?>volunteer">Volunteer Page</a></li>
+                  <li><a href="<?php echo base_url();?>admin">Admin Page</a></li>
+                  <li><a href="<?php echo base_url();?>systemlog">System Log</a></li>
+                  <li><a href="<?php echo base_url();?>account">Account Page</a></li>
+                  <li><a href="<?php echo base_url();?>test">Test Page</a></li>
               </ul>
             </li>
             <li>
@@ -49,8 +51,7 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="" target="_blank">Link</a></li>
-            <li><a href="" target="_blank">Link</a></li>
+            <li><a href="<?php echo base_url();?>login/do_logout/" target="_blank">Logout</a></li>
           </ul>
 
         </div>
