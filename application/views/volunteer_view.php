@@ -23,7 +23,7 @@ text-align:left;
 <h1>Volunteers</h1>
 <?php echo $msg;?>
 
-<form action="<?php echo base_url();?>newvolunteer"><input type="submit" value="Added a new volunteer"></form>
+<a href="home">Home</a>
 
 <div>
 	<table style="width:1200px">

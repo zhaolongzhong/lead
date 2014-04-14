@@ -42,7 +42,7 @@ class Login_model extends CI_Model{
     }
     function delete($uid)
     {
-        $this->db->where('uid',$uid);
+        $this->db->where('UserAuthentication.uid',$uid);
         $this->db->delete('UserAuthentication');
     }
 }

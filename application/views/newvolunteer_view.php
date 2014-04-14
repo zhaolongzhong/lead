@@ -3,37 +3,37 @@
 <table>
 <form method="POST" action="<?php echo base_url();?>newvolunteer/insert">
 <tr><td>
-VID: </td><td><input type="text" name="VID" size="25">
+Email: </td><td><input type="text" name="email" size="25">
 </td></tr>
 <tr><td>
-Age: </td><td><input type="text" name="Age" size="25">
+Age: </td><td><input type="text" name="age" size="25">
 </td></tr>
 <tr><td>
-Fname: </td><td><input type="text" name="Fname" size="25">
+Fname: </td><td><input type="text" name="fname" size="25">
 </td></tr>
 <tr><td>
-Lname: </td><td><input type="text" name="Lname" size="25">
+Lname: </td><td><input type="text" name="lname" size="25">
 </td></tr>
 <tr><td>
-ActiveVolunteer: </td><td><input type="text" name="ActiveVolunteer" size="25">
+ActiveVolunteer: </td><td><input type="text" name="activevolunteer" size="25">
 </td></tr>
 <tr><td>
-Email: </td><td><input type="text" name="Email" size="25">
+Approved: </td><td><input type="text" name="approved" size="25">
 </td></tr>
 <tr><td>
-StreetAddress: </td><td><input type="text" name="StreetAddress" size="25">
+StreetAddress: </td><td><input type="text" name="streetaddress" size="25">
 </td></tr>
 <tr><td>
-City: </td><td><input type="text" name="City" size="25">
+City: </td><td><input type="text" name="city" size="25">
 </td></tr>
 <tr><td>
-StateCode: </td><td><input type="text" name="StateCode" size="25">
+StateCode: </td><td><input type="text" name="statecode" size="25">
 </td></tr>
 <tr><td>
-PrimaryPhone: </td><td><input type="text" name="PrimaryPhone" size="25">
+PrimaryPhone: </td><td><input type="text" name="primaryphone" size="25">
 </td></tr>
 <tr><td>
-AltPhone: </td><td><input type="text" name="AltPhone" size="25">
+AltPhone: </td><td><input type="text" name="altphone" size="25">
 </td></tr>
 
 <tr><td>

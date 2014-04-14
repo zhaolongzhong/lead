@@ -27,6 +27,10 @@ ActiveVolunteer:
 </td><td><input type="text" value="<?php echo $volunteer->activevolunteer; ?>" name="activevolunteer" size="25">
 </td></tr>
 <tr><td>
+Approved: 
+</td><td><input type="text" value="<?php echo $volunteer->approved; ?>" name="approved" size="25">
+</td></tr>
+<tr><td>
 StreetAddress: 
 </td><td><input type="text" value="<?php echo $volunteer->streetaddress; ?>" name="streetaddress" size="25">
 </td></tr>

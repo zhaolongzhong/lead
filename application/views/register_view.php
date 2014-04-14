@@ -3,7 +3,7 @@
 <table>
 <form method="POST" action="<?php echo base_url();?>register/process">
 <tr><td>
-Username: </td><td><input type="text" name="username" size=25">
+Email: </td><td><input type="text" name="username" size=25">
 </tr></td>
 <tr><td>
 Password: </td><td><input type="password" name="password" size=25">

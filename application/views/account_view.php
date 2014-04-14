@@ -8,7 +8,7 @@
 	?>
 		<li>
 			<?php echo $user->uid; ?> | <?php echo $user->username; ?> | <?php echo $user->password; ?>
-			| <a href="<?php echo base_url(); ?>account/delete?uid=<?php echo $user->uid; ?>">Delete</a>
+			| <a href="<?php echo base_url(); ?>account/delete?username=<?php echo $user->username; ?>">Delete</a>
 		</li>
 	<?php
 		}
