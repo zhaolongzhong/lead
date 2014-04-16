@@ -8,8 +8,10 @@ class Account extends CI_Controller {
 		$data['msg'] = $msg;
 		$this->load->model('login_model');
 		$query = $this->login_model->get_all_user_info();
-
 		$data['query'] = $query->result();
+		$this->load->model('volunteer_model');
+		$joinquery = $this->volunteer_model->joinaccount();
+		$data['joinquery'] = $joinquery->result();
 
 		$this->load->view('account_view', $data);
 	}

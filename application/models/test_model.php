@@ -9,5 +9,9 @@ class Test_model extends CI_Model{
         $query = $this->db->get('UserAuthentication');
         return $query;
     }
+    function get_all_user(){
+    	$query = $this->db->get('UserAuthentication');
+    	return  $query;
+    }
 }
 ?>
