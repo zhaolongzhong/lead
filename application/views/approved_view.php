@@ -23,8 +23,9 @@ text-align:left;
 </script>
 </head>
 <h1>Time Sheet Request List</h1>
-After click Approve, the adminid will automatically insert into the table.<br />
-You can click Edit to edit the timesheet, and then approve.
+After click Approve, the adminid will automatically be inserted into the TimeSheetApproved table.<br />
+You can click Edit to edit the timesheet, and then approve.<br/>
+Please login in with another account before approve.
 <div>
 	<table style="width:1200px">
 		<tr>
@@ -47,11 +48,11 @@ You can click Edit to edit the timesheet, and then approve.
 			<td><?php echo $request->starttime; ?></td>
 			<td><?php echo $request->endtime; ?></td>
 			<td><?php echo $request->hoursworked; ?></td>
-			<td><?php echo $this->session->userdata('uid'); ?></td>
+			<td><?php echo $request->approvedbyadmin; ?></td>
 			<td><?php echo $request->comments; ?></td>
 			<td>
-			<a href="<?php echo base_url(); ?>request_update?timesheetid=<?php echo $request->timesheetid; ?>">Edit</a>
-			<a href="<?php echo base_url(); ?>request_list/approve?timesheetid=<?php echo $request->timesheetid; ?>">Approve</a>
+			<a href="<?php echo base_url(); ?>approved_update?timesheetid=<?php echo $request->timesheetid; ?>">Edit</a>
+			<a href="<?php echo base_url(); ?>approved/approve?timesheetid=<?php echo $request->timesheetid; ?>">Approve</a>
 			
 			</td>
 		<tr>

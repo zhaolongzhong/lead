@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Request_list extends CI_Controller {
+class Approved extends CI_Controller {
 
 	public function index($msg = NULL)
 	{
@@ -8,7 +8,7 @@ class Request_list extends CI_Controller {
         $this->load->model('time_model');
 		$query = $this->time_model->get_request();
 		$data['query'] = $query->result();
-		$this->load->view('request_list_view', $data);
+		$this->load->view('approved_view', $data);
 	}
 
 	function approve()
