@@ -15,20 +15,29 @@ class Volunteer_model extends CI_Model{
         $this->db->insert('Volunteers',$data);
     }
 
-    function select($email)
+    function select($username)
     {
-        $query = $this->db->get_where('Volunteers', array('email' =>$email));
+        $query = $this->db->get_where('Volunteers', array('username' =>$username));
         return $query;
     }
-    function update($data,$email)
+    function update($data,$username)
     {
-        $this->db->where('email', $email);
+        $this->db->where('username', $username);
         $this->db->update('Volunteers', $data); 
     }
-    function delete($email)
+    function delete($username)
     {
-    	$this->db->where('email',$email);
+    	$this->db->where('username',$username);
         $this->db->delete('Volunteers');
+    }
+    function joinaccount()
+    {
+        $this->db->select('*');
+        $this->db->from('Volunteers');
+        $this->db->join('UserAuthentication', 'UserAuthentication.username = Volunteers.username');
+        // $this->db->join('UserAuthentication', 'UserAuthentication.username = Volunteers.username', 'left');
+        $query = $this->db->get();
+        return $query;
     }
 }
 ?>

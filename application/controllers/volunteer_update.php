@@ -5,11 +5,11 @@ class Volunteer_update extends CI_Controller {
 	public function index($msg = NULL)
 	{
 		// $vid = $_GET["vid"];
-		$email = $this->input->get('email',true);
+		$username = $this->input->get('username',true);
 
 		$data['msg'] = $msg;
         $this->load->model('volunteer_model');
-		$query = $this->volunteer_model->select($email);
+		$query = $this->volunteer_model->select($username);
 		$data['query'] = $query->result();
 		$this->load->view('volunteer_update_view', $data);
 	}
@@ -17,8 +17,8 @@ class Volunteer_update extends CI_Controller {
 	function update()
 	{
 
-		$email = $this->input->get('email',true);
-        $email 			 = $_POST['email'];
+		$username = $this->input->get('username',true);
+        $username 			 = $_POST['username'];
     	$age 			 = $_POST['age'];
     	$fname 			 = $_POST['fname'];
     	$lname 			 = $_POST['lname'];
@@ -31,7 +31,7 @@ class Volunteer_update extends CI_Controller {
     	$altphone 	     = $_POST['altphone'];
 			
         $data = array(
-                    'email' => $email,
+                    'username' => $username,
                     'age' => $age,
                     'fname' => $fname,
                     'lname' =>$lname,
@@ -45,7 +45,7 @@ class Volunteer_update extends CI_Controller {
                     );
 
         $this->load->model('volunteer_model');
-        $this->volunteer_model->update($data,$email);
+        $this->volunteer_model->update($data,$username);
 
 		$msg = 'Update successully!';
 		redirect('volunteer');

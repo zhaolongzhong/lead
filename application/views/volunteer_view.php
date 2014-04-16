@@ -23,7 +23,7 @@ text-align:left;
 <h1>Volunteers</h1>
 <?php echo $msg;?>
 
-<a href="home">Home</a>
+<form action="<?php echo base_url();?>newvolunteer"><input type="submit" value="Added a new volunteer"></form>
 
 <div>
 	<table style="width:1200px">
@@ -46,7 +46,7 @@ text-align:left;
 		{
 		?>
 		<tr>
-			<td><?php echo $volunteer->email; ?></td>
+			<td><?php echo $volunteer->username; ?></td>
 			<td><?php echo $volunteer->age; ?></td>
 			<td><?php echo $volunteer->fname; ?></td>
 			<td><?php echo $volunteer->lname; ?></td>
@@ -58,7 +58,7 @@ text-align:left;
 			<td><?php echo $volunteer->primaryphone; ?></td>
 			<td><?php echo $volunteer->altphone; ?></td>
 			<td>
-			<a href="<?php echo base_url(); ?>volunteer_update?email=<?php echo $volunteer->email; ?>">Edit</a>
+			<a href="<?php echo base_url(); ?>volunteer_update?username=<?php echo $volunteer->username; ?>">Edit</a>
 			</td>
 		<tr>
 		<?php

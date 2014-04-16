@@ -8,7 +8,7 @@
 		?>
 <tr><td>
 Email: 
-</td><td><input type="text" value="<?php echo $volunteer->email;?>" name="email" size="25" >
+</td><td><input type="text" value="<?php echo $volunteer->username;?>" name="username" size="25" >
 </td></tr>
 <tr><td>
 Age: 
