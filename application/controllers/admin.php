@@ -7,8 +7,11 @@ class Admin extends CI_Controller {
 		$data['msg'] = $msg;
 		$this->load->model('admin_model');
 		$query = $this->admin_model->get_all_admins();
-		
 		$data['query'] = $query->result();
+
+		$this->load->model('quiz_model');
+		$quizlist = $this->quiz_model->get_quiz_table();
+		$data['quizlist'] = $quizlist->result();
 
 		$this->load->view('admin_view', $data);
 	}

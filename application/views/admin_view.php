@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html>
+<?php include './assets/template/header.php'; ?>
 
-<head>
-<style>
-table,th,td
-{
-border:1px solid black;
-border-collapse:collapse;
-}
-th,td
-{
-padding:5px;
-}
-th
-{
-text-align:left;
-}
-</style>
-</head>
 
-<body>
 <h1>System Log Viewer</h1>
 <?php echo $msg;?>
 <a href="home">Home</a>
 
 <div>
-	<table style="width:1200px">
+	<table style="width:400px">
 		<tr>
 		 	<th>Admin ID</th>
 		 	<th>Can Edit Users</th>
@@ -45,5 +26,39 @@ text-align:left;
 		?>
 	</table>
 </div>
-</body>
-</html>
+
+<hr>
+
+<h1>List of Quiz</h1>
+
+<div>
+	<table style="width:400px">
+		<tr>
+		 	<th>Quiz Table ID</th>
+		 	<th>Title</th>
+			<th>Test Number</th>
+			<th>Action</th>	
+		</tr>
+		<?php 
+		foreach ($quizlist as $quiz)
+		{
+		?>
+		<tr>
+			<td><a href="<?php echo base_url(); ?>question?id=<?php echo $quiz->id; ?>"><?php echo $quiz->id; ?></a></td>
+			<td><?php echo $quiz->title; ?></td>
+			<td><?php echo $quiz->test_number; ?></td>
+			<td>Edit
+			</td>
+		<tr>
+		<?php
+		}
+		?>
+	</table>
+</div>
+<div>
+	<form action="<?php echo base_url();?>"><input type="submit" value="Added a new quiz"></form>
+</div>
+
+
+
+<?php include './assets/template/footer.php'; ?>
