@@ -18,4 +18,8 @@ class Time_model extends CI_Model{
         $this->db->where('timesheetid', $timesheetid);
         $this->db->update('TimeSheetApproved', $data);
     }
+    function select($timesheetid){
+        $query = $this->db->get_where('TimeSheetApproved', array('timesheetid' =>$timesheetid));
+        return $query;
+    }
 }
