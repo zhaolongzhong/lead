@@ -39,4 +39,29 @@ class Quiz_update extends CI_Controller {
 		$msg = 'Add successully!';
 		$this->index($msg);
 	}
+
+	function update()
+	{
+		$testid 	      = $_POST['testid'];
+    	$testorder 	      = $_POST['testorder'];
+    	$istruefalse      = $_POST['istruefalse'];
+    	$ismultiplechoice = $_POST['ismultiplechoice'];
+    	$isinput          = $_POST['isinput'];
+    	$question 	      = $_POST['question'];
+			
+        $data = array(
+                    'testid' 		   => $testid,
+                    'testorder' 	   => $testorder,
+                    'istruefalse' 	   => $istruefalse,
+                    'ismultiplechoice' =>$ismultiplechoice,
+                    'isinput' 		   => $isinput,
+                    'question' 	       => $question
+                    );
+
+        $this->load->model('quiz_model');
+        $this->quiz_model->update_question($testid,$testorder,$data);
+
+		$msg = 'Update successully!';
+		$this->index($msg);
+	}
 }
