@@ -29,19 +29,48 @@ class Quiz_model extends CI_Model{
         return $query;
     }
 
+    function select_question()
+    {
+        $query = $this->db->get_where('Question');
+        return $query;
+    }
     function insert_question($data){
-        $this->db->insert('QuizQuestion',$data);
+        $this->db->insert('Question',$data);
+    }
+    function delete_question($questionid)
+    {
+        $this->db->where('questionid', $questionid);
+        $this->db->delete('Question');
     }
     function update_question($testid,$testorder,$data){
         $this->db->where('testid', $testid);
         $this->db->update('QuizQuestion', $data, array('testid' => $testid,
                                                         'testorder' => $testorder));
     }
-    // function insert($data)
-    // {
-    //     $this->db->insert('Volunteers',$data);
-    // }
+    function insert($data)
+    {
+        $this->db->insert('Quiz',$data);
+    }
 
+    function insert_answer($data){
+        $this->db->insert('Answer',$data);
+    }
+    function select_answer()
+    {
+        $query = $this->db->get_where('Answer');
+        return $query;
+    }
+    function select_answer_by_questionid($questionid)
+    {
+        $query = $this->db->get_where('Answer', array('questionid' =>$questionid));
+        return $query;
+    }
+
+    function delete_answer_by_answerid($answerid)
+    {
+        $this->db->where('answerid', $answerid);
+        $this->db->delete('Answer');
+    }
     // function select($username)
     // {
     //     $query = $this->db->get_where('Volunteers', array('username' =>$username));
