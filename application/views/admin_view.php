@@ -47,7 +47,7 @@
 			<td><a href="<?php echo base_url(); ?>question?id=<?php echo $quiz->id; ?>"><?php echo $quiz->id; ?></a></td>
 			<td><?php echo $quiz->title; ?></td>
 			<td><?php echo $quiz->test_number; ?></td>
-			<td>Edit
+			<td><a href="<?php echo base_url(); ?>quiz_update?id=<?php echo $quiz->id; ?>">Edit</a>
 			</td>
 		<tr>
 		<?php
