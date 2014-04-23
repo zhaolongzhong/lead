@@ -10,7 +10,7 @@
 
 <a href="<?php echo base_url();?>request">Time Sheet Request Page</a><br />
 <a href="<?php echo base_url();?>approved">Approve Sheet Request Page</a><br />
-<a href="<?php echo base_url();?>quiz_list">Quiz Page</a><br />
-
+<a href="<?php echo base_url();?>quiz_list">Quiz Page for admin</a><br />
+<a href="<?php echo base_url();?>test_list">Go to this page if you want to take a quiz</a><br />
 </div>
 <?php include './assets/template/footer.php'; ?>
