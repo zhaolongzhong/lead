@@ -34,6 +34,13 @@ class Quiz_model extends CI_Model{
         $query = $this->db->get_where('Question');
         return $query;
     }
+
+    function select_question_by_quizid($quizid)
+    {
+        $query = $this->db->get_where('Question',array('quizid' =>$quizid));
+        return $query;
+    }
+
     function insert_question($data){
         $this->db->insert('Question',$data);
     }

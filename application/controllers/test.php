@@ -7,7 +7,7 @@ class Test extends CI_Controller {
 		$data['msg'] = $msg;
 		$quizid = $this->input->get('quizid',true);
 		$this->load->model('quiz_model');
-		$questions = $this->quiz_model->select_question();
+		$questions = $this->quiz_model->select_question_by_quizid($quizid);
 		$answers = $this->quiz_model->select_answer();
 		$data['answers'] = $answers->result();
 		$data['questions'] = $questions->result();
