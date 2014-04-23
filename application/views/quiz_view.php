@@ -1,92 +1,68 @@
-<?php include './assets/template/header.php'; ?>
-<h1>List of Quiz</h1>
+
+<h1>Quiz</h1>
 <?php echo $msg;?>
 
 
-<div>
-	<table style="width:1200px">
-		<tr>
-		 	<th>Quiz Table ID</th>
-		 	<th>Title</th>
-			<th>Test Number</th>	
-		</tr>
+
+<form method="POST">
+<table>
+	<th>Question ID</th>
+	<th>Question Order</th>
+	<th>Question</th>
+	<th>Answer</th>
+	<th>Correct Answer</th>
+<?php 
+foreach ($questions as $question)
+{
+?>
+<tr>
+	<td><?php echo $question->questionid; ?> </td>
+	<td><?php echo $question->questionorder; ?></td>
+	<td><?php echo $question->question; ?></td>
+	<td>
 		<?php 
-		foreach ($query as $quiz)
+		foreach ($answers as $answer)
 		{
+			if($question->questionid == $answer->questionid){
 		?>
-		<tr>
-			<td><a href="<?php echo base_url(); ?>question?id=<?php echo $quiz->id; ?>"><?php echo $quiz->id; ?></a></td>
-			<td><?php echo $quiz->title; ?></td>
-			<td><?php echo $quiz->test_number; ?></td>
-			<td>
-			</td>
-		<tr>
+		<?php echo $answer->answerorder; ?>. <?php echo $answer->answer; ?> <br/>
 		<?php
+			}
 		}
 		?>
-	</table>
-</div>
-<div>
-	<form action="<?php echo base_url();?>"><input type="submit" value="Added a new quiz"></form>
-</div>
-<hr >
-<h1>Quiz template</h1>
+		
+	</td>
+	<td><?php echo $question->correctanswer; ?></td>
+	<td><a href="<?php echo base_url(); ?>answer?questionid=<?php echo $question->questionid; ?>&quizid=<?php echo $question->quizid; ?>">Add a answer</a></td>
+	<td><a href="<?php echo base_url(); ?>quiz/delete?questionid=<?php echo $question->questionid; ?>&quizid=<?php echo $question->quizid; ?>">Delete</a></td>
+</tr>
+<?php
+	}
+?>
+</table>
+</form>
+
+<h2>Add a question</h2>
 
 
-<h3>True/False</h3>
-
-<h5>Question 1</h5>
-<p> A crisis is usually resolved within 6 weeks.</p>
-<p>
-<label>True
-   <input type="radio" name="IsMale" value="true" data-bind="checked:IsMale"/>
-</label> 
-<label>False
-   <input type="radio" name="IsMale" value="false" data-bind="checked:IsMale"/>
-</label>
-</p>
-
-<h5>Question 2</h5>
-<p>During a crisis, people are unable to resolve their own problems.</p>
-<p>
-<label>True
-   <input type="radio" name="IsMale" value="true" data-bind="checked:IsMale"/>
-</label> 
-<label>False
-   <input type="radio" name="IsMale" value="false" data-bind="checked:IsMale"/>
-</label>
-</p>
-
-<h5>etc...</h5>
+<form method="POST" action="<?php echo base_url();?>quiz/insert?quizid=<?php echo $quizid;?>">
+<table>
+<tr><td>
+Question Order: </td><td><input type="text" name="questionorder" size="25">
+</td></tr>
+<tr><td>
+Question Type: </td><td><input type="text" name="questiontype" size="25">
+</td></tr>
+<tr><td>
+Question: </td><td><input type="text" name="question" size="25">
+</td></tr>
+<tr><td>
+Correct Answer: </td><td><input type="text" name="correctanswer" size="25">
+</td></tr>
+<tr><td>
+<input type="submit" value="submit">
+</tr></td>
+</table>
+</form>
 
 
-<h3>Multiple choice</h3>
-
-<p>
-Which of the following questions will help establish rapport with the caller?
-  <ul>
-    <li> <input type="radio" name="satisfaction" id="vsat" value="vsat" checked="checked"> <label for="A">A: Tell me your name or we can't talk.</label></li>
-    <li><input type="radio" name="satisfaction" id="sat" value="sat"> <label for="B">B: Tell me a little more about that.</label> </li>
-    <li><input type="radio" name="satisfaction" id="dcare" value="dcare"> <label for="C">C: Are you suicidal?</label> </li>
-    <li><input type="radio" name="satisfaction" id="disat" value="disat"> <label for="D">D: It sounds as if you're feeling sad.</label> </li>
-    <li><input type="radio" name="satisfaction" id="vdisat" value="vdisat"> <label for="vdisat">E: B and D</label> </li>
-  </ul>
-
-</p>
-
-<h5>etc...</h5>
-
-
-<h3>Freeform</h3>
-
-  <label for="comments">What would you tell a caller who asked you to disclose their race because they felt it would influence the call?</label>
-  <br>
-      <textarea name="comments" id="comments" cols="80" rows="5"></textarea>
-
-
-<h5>etc...</h5>
-
-  <button type="submit" class="btn btn-default">Submit</button>
-
-
-<?php include './assets/template/footer.php'; ?>
