@@ -1,90 +1,49 @@
-<?php include './assets/template/header.php'; ?>
-<h1>List of Quiz</h1>
-<?php echo $msg;?>
+<?php include './assets/template/header_admin.php'; ?>
+<div class="container">
+		<div class="row">
+				
+			<div id="content" class="span12">
+<h2>
+List of Quiz
+</h2>
 
+				<div class="well">
+				<?php echo $msg;?>
 
-<div>
-	<table style="width:1200px">
-		<tr>
-		 	<th>Quiz ID</th>
-		 	<th>Title</th>	
-		</tr>
-		<?php 
-		foreach ($query as $quiz)
-		{
-		?>
-		<tr>
-			<td><a href="<?php echo base_url(); ?>quiz?quizid=<?php echo $quiz->quizid; ?>"><?php echo $quiz->quizid; ?></a></td>
-			<td><?php echo $quiz->quiztitle; ?></td>
-			<td>
-			</td>
-		<tr>
-		<?php
-		}
-		?>
-	</table>
-</div>
-<div>
-	<form action="<?php echo base_url();?>quiz_new"><input type="submit" value="Added a new quiz"></form>
-</div>
-<hr >
-<h1>Quiz template</h1>
+					<div>
+						<table style="width:1000px">
+							<tr>
+							 	<th>Quiz ID</th>
+							 	<th>Title</th>	
+							</tr>
+							<?php 
+							foreach ($query as $quiz)
+							{
+							?>
+							<tr>
+								<td><a href="<?php echo base_url(); ?>quiz?quizid=<?php echo $quiz->quizid; ?>"><?php echo $quiz->quizid; ?></a></td>
+								<td><?php echo $quiz->quiztitle; ?></td>
+								<td>
+								</td>
+							<tr>
+							<?php
+							}
+							?>
+						</table>
+					</div>
+					<div>
+						<form action="<?php echo base_url();?>quiz_new"><input type="submit" value="Added a new quiz"></form>
+					</div>
 
+					<div>
+						<form action="<?php echo base_url();?>test_list"><input type="submit" value="List of quiz"></form>
+					</div>
 
-<h3>True/False</h3>
+				</div>
 
-<h5>Question 1</h5>
-<p> A crisis is usually resolved within 6 weeks.</p>
-<p>
-<label>True
-   <input type="radio" name="IsMale" value="true" data-bind="checked:IsMale"/>
-</label> 
-<label>False
-   <input type="radio" name="IsMale" value="false" data-bind="checked:IsMale"/>
-</label>
-</p>
+			</div>
+		
+		</div>
+	</div>
+<?php include './assets/template/footer_1.php'; ?>
 
-<h5>Question 2</h5>
-<p>During a crisis, people are unable to resolve their own problems.</p>
-<p>
-<label>True
-   <input type="radio" name="IsMale" value="true" data-bind="checked:IsMale"/>
-</label> 
-<label>False
-   <input type="radio" name="IsMale" value="false" data-bind="checked:IsMale"/>
-</label>
-</p>
-
-<h5>etc...</h5>
-
-
-<h3>Multiple choice</h3>
-
-<p>
-Which of the following questions will help establish rapport with the caller?
-  <ul>
-    <li> <input type="radio" name="satisfaction" id="vsat" value="vsat" checked="checked"> <label for="A">A: Tell me your name or we can't talk.</label></li>
-    <li><input type="radio" name="satisfaction" id="sat" value="sat"> <label for="B">B: Tell me a little more about that.</label> </li>
-    <li><input type="radio" name="satisfaction" id="dcare" value="dcare"> <label for="C">C: Are you suicidal?</label> </li>
-    <li><input type="radio" name="satisfaction" id="disat" value="disat"> <label for="D">D: It sounds as if you're feeling sad.</label> </li>
-    <li><input type="radio" name="satisfaction" id="vdisat" value="vdisat"> <label for="vdisat">E: B and D</label> </li>
-  </ul>
-
-</p>
-
-<h5>etc...</h5>
-
-
-<h3>Freeform</h3>
-
-  <label for="comments">What would you tell a caller who asked you to disclose their race because they felt it would influence the call?</label>
-  <br>
-      <textarea name="comments" id="comments" cols="80" rows="5"></textarea>
-
-
-<h5>etc...</h5>
-
-  <button type="submit" class="btn btn-default">Submit</button>
-
-
-<?php include './assets/template/footer.php'; ?>

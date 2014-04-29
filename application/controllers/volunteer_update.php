@@ -5,12 +5,16 @@ class Volunteer_update extends CI_Controller {
 	public function index($msg = NULL)
 	{
 		// $vid = $_GET["vid"];
-		$username = $this->input->get('username',true);
-
-		$data['msg'] = $msg;
+		// $username = $this->input->get('username',true);
+        $username = $this->session->userdata('username');
+        $firstname = $this->session->userdata('firstname');
+        $data['firstname'] = $firstname;
+		$data['msg'] = $username;
         $this->load->model('volunteer_model');
 		$query = $this->volunteer_model->select($username);
 		$data['query'] = $query->result();
+        $users = $this->volunteer_model->select_user($username);
+        $data['users'] = $users->result();
 		$this->load->view('volunteer_update_view', $data);
 	}
 
@@ -18,7 +22,8 @@ class Volunteer_update extends CI_Controller {
 	{
 
 		$username = $this->input->get('username',true);
-        $username 			 = $_POST['username'];
+        $username 		 = $_POST['username'];
+        $password        = $_POST['password'];
     	$age 			 = $_POST['age'];
     	$fname 			 = $_POST['fname'];
     	$lname 			 = $_POST['lname'];
@@ -44,10 +49,23 @@ class Volunteer_update extends CI_Controller {
                     'altphone' => $altphone
                     );
 
+        $data_user = array(
+                    'password' => $password,
+                    'firstname' => $fname,
+                    'lastname' =>$lname
+                    );
+
         $this->load->model('volunteer_model');
         $this->volunteer_model->update($data,$username);
+        $this->volunteer_model->update_user($data_user,$username);
 
 		$msg = 'Update successully!';
-		redirect('volunteer');
+        $role = $this->session->userdata('role');
+        if($role == "admin"){
+            redirect('home_admin');
+        }elseif($role=="user"){
+            redirect('home_user');
+        }
+		
 	}
 }

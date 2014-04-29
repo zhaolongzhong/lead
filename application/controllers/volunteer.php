@@ -5,6 +5,8 @@ class Volunteer extends CI_Controller {
 	public function index($msg = NULL)
 	{
 		$data['msg'] = $msg;
+		$firstname = $this->session->userdata('firstname');
+		$data['firstname'] = $firstname;
 		$this->load->model('volunteer_model');
 		$query = $this->volunteer_model->get_all_volunteers();
 		

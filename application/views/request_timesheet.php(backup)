@@ -1,0 +1,39 @@
+<html>
+<head>
+<body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+
+<script>
+        $(function() {
+            $( ".datepicker" ).datepicker();
+        });
+</script>
+</head>
+
+<h1>Time Sheet Request</h1>
+
+<table>
+<form method="POST" action="<?php echo base_url();?>">
+<tr><td>
+Requested by </td><td> %User Name%
+</tr></td>
+<tr><td>
+Start Time: </td><td><input type="text" name="starttime" value="" class="datepicker" />
+</tr></td>
+<tr><td>
+End Time: </td><td><input type="text" name="endtime" value="" class="datepicker" />
+</tr></td>
+<tr><td>
+Comments: </td><td><input type="text" name="comments" size=50">
+</tr></td>
+<tr><td>
+<input type="submit" value="submit">
+</tr></td>
+</table>
+</form>
+
+<?php echo $msg; ?>
+</body>
+</html>

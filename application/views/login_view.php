@@ -1,5 +1,16 @@
-<h1>Login</h1>
+<?php include './assets/template/header_1.php'; ?>
 
+
+<div class="container">
+		<div class="row">
+				
+			<div id="content" class="span12">
+
+
+
+<h2>Login</h2>
+
+<div class="well">
 <table>
 <form method="POST" action="<?php echo base_url();?>login/process">
 <tr><td>
@@ -19,15 +30,24 @@ Password: </td><td><input type="password" name="password" size=25">
 <?php echo $msg;?>
 
 <ul>
-	uid | username | password
+	uid | username | password | role
 	<?php 
 		foreach ($query as $user)
 		{
 	?>
 		<li>
-			<?php echo $user->uid; ?> | <?php echo $user->username; ?> | <?php echo $user->password; ?>
+			<?php echo $user->uid; ?> | <?php echo $user->username; ?> | <?php echo $user->password;  ?> | <?php echo $user->role;?>
 		</li>
 	<?php
 		}
 	?>
 </ul>
+</div>
+
+
+			</div>
+		
+		</div>
+	</div>
+
+<?php include './assets/template/footer_1.php'; ?>

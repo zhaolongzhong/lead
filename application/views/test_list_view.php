@@ -1,5 +1,17 @@
-<h1>List of Quiz</h1>
-<?php echo $msg;?>
+<?php include './assets/template/header_user.php'; ?>
+<div class="container">
+		<div class="row">
+				
+			<div id="content" class="span12">
+<h2>
+List of Quiz
+</h2>
+<div class="well">
+
+
+
+
+
 
 <div>
 	<table style="width:1200px">
@@ -22,3 +34,17 @@
 		?>
 	</table>
 </div>
+
+
+
+
+</div>
+
+
+			</div>
+		
+		</div>
+	</div>
+
+<?php include './assets/template/footer_1.php'; ?>
+

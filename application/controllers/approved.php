@@ -5,6 +5,8 @@ class Approved extends CI_Controller {
 	public function index($msg = NULL)
 	{
 		$data['msg'] = $msg;
+		$firstname = $this->session->userdata('firstname');
+		$data['firstname'] = $firstname;
         $this->load->model('time_model');
 		$query = $this->time_model->get_request();
 		$data['query'] = $query->result();
@@ -16,7 +18,6 @@ class Approved extends CI_Controller {
 
 		$timesheetid = $this->input->get('timesheetid',true);
         $adminid = $this->session->userdata('uid');
-			
         $data = array(
                     'approvedbyadmin' => $adminid,
                     );

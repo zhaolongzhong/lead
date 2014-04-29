@@ -10,7 +10,7 @@ class Newvolunteer extends CI_Controller {
 
 	function insert()
 	{
-		$email 			 = $_POST['email'];
+		$username 	     = $_POST['email'];
     	$age 			 = $_POST['age'];
     	$fname 			 = $_POST['fname'];
     	$lname 			 = $_POST['lname'];
@@ -23,12 +23,12 @@ class Newvolunteer extends CI_Controller {
     	$altphone 	     = $_POST['altphone'];
 			
         $data = array(
-                    'email' => $email,
+                    'username' => $username,
                     'age' => $age,
                     'fname' => $fname,
                     'lname' =>$lname,
                     'activevolunteer' => $activevolunteer,
-                    'email' => $email,
+                    'approved' => $approved,
                     'streetaddress' => $streetaddress,
                     'city' => $city,
                     'statecode' => $statecode,

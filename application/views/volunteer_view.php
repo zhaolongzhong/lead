@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html>
+<?php include './assets/template/header_admin.php'; ?>
 
-<head>
-<style>
-table,th,td
-{
-border:1px solid black;
-border-collapse:collapse;
-}
-th,td
-{
-padding:5px;
-}
-th
-{
-text-align:left;
-}
-</style>
-</head>
 
-<body>
-<h1>Volunteers</h1>
+<div class="container">
+		<div class="row">
+				
+			<div id="content" class="span12">
+
+
+
+<h2>
+Volunteers
+</h2>
+
 <?php echo $msg;?>
 
+<div class="well">
 <form action="<?php echo base_url();?>newvolunteer"><input type="submit" value="Added a new volunteer"></form>
 
 <div>
@@ -66,5 +58,18 @@ text-align:left;
 		?>
 	</table>
 </div>
-</body>
-</html>
+
+</div>
+
+
+			</div>
+		
+		</div>
+	</div>
+
+<?php include './assets/template/footer_1.php'; ?>
+
+
+
+
+

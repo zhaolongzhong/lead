@@ -1,33 +1,19 @@
-<head>
-<style>
-table,th,td
-{
-border:1px solid black;
-border-collapse:collapse;
-}
-th,td
-{
-padding:5px;
-}
-th
-{
-text-align:left;
-}
-</style>
+<?php include './assets/template/header_admin.php'; ?>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>
-        $(function() {
-            $( ".datepicker" ).datepicker();
-        });
-</script>
-</head>
-<h1>Time Sheet Request List</h1>
-After click Approve, the adminid will automatically be inserted into the TimeSheetApproved table.<br />
-You can click Edit to edit the timesheet, and then approve.<br/>
-Please login in with another account before approve.
+
+<div class="container">
+		<div class="row">
+				
+			<div id="content" class="span12">
+
+
+
+<h2>
+Time Sheet Request List</h2>
+
+<div class="well">
 <div>
-	<table style="width:1200px">
+	<table style="width:1000px">
 		<tr>
 		 	<th>Time Sheet ID</th>
 		 	<th>User ID</th>
@@ -61,3 +47,13 @@ Please login in with another account before approve.
 		?>
 	</table><?php echo $msg; ?>
 </div>
+
+</div>
+
+
+			</div>
+		
+		</div>
+	</div>
+
+<?php include './assets/template/footer_1.php'; ?>

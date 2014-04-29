@@ -4,6 +4,10 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('welcome_view');
+		$this->load->model('newspost_model');
+		$query = $this->newspost_model->get_all_newsposts();
+		$data['query'] = $query->result();
+
+		$this->load->view('home', $data);
 	}
 }

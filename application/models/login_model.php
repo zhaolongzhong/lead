@@ -16,19 +16,36 @@ class Login_model extends CI_Model{
         $this->db->where('password', $password);
         
         // Run the query
-        $query = $this->db->get('UserAuthentication');
+        $query = $this->db->get('Users');
         // Let's check if there are any results
         
         if($query->num_rows == 1)
         {
             // If there is a user, then create session data
             $row = $query->row();
-            $data = array(
+            if($row->role == 0){
+                $data=array(
+                    'role' => "user",
                     'uid' => $row->uid,
                     'username' => $row->username,
-                    'password' => $row->password,
-                    'validated' => true
-                    );
+                    'firstname' => $row->firstname,
+                    'validate' => true);
+            }elseif ($row->role == 1) {
+                $data=array(
+                    'role' => "admin",
+                    'uid' => $row->uid,
+                    'username' => $row->username,
+                    'firstname' => $row->firstname,
+                    'validate' => true);
+            }elseif ($row->role == 2) {
+                $data=array(
+                    'role' => "superadmin",
+                    'uid' => $row->uid,
+                    'username' => $row->username,
+                    'firstname' => $row->firstname,
+                    'validate' => true);
+            }
+
             $this->session->set_userdata($data);
             return true;
         }
@@ -37,13 +54,13 @@ class Login_model extends CI_Model{
     }
 
     public function get_all_user_info(){
-        $query = $this->db->get('UserAuthentication');
+        $query = $this->db->get('Users');
         return $query;
     }
     function delete($uid)
     {
-        $this->db->where('UserAuthentication.uid',$uid);
-        $this->db->delete('UserAuthentication');
+        $this->db->where('uid','1');
+        $this->db->delete('Users');
     }
 }
 ?>

@@ -17,13 +17,23 @@ class Volunteer_model extends CI_Model{
 
     function select($username)
     {
-        $query = $this->db->get_where('Volunteers', array('username' =>$username));
+        $query = $this->db->get_where('Volunteers', array('username' => $username));
+        return $query;
+    }
+    function select_user($username)
+    {
+        $query = $this->db->get_where('Users', array('username' => $username));
         return $query;
     }
     function update($data,$username)
     {
         $this->db->where('username', $username);
         $this->db->update('Volunteers', $data); 
+    }
+    function update_user($data,$username)
+    {
+        $this->db->where('username', $username);
+        $this->db->update('Users', $data); 
     }
     function delete($username)
     {
@@ -34,8 +44,8 @@ class Volunteer_model extends CI_Model{
     {
         $this->db->select('*');
         $this->db->from('Volunteers');
-        $this->db->join('UserAuthentication', 'UserAuthentication.username = Volunteers.username');
-        // $this->db->join('UserAuthentication', 'UserAuthentication.username = Volunteers.username', 'left');
+        $this->db->join('Users', 'Users.username = Volunteers.username');
+        // $this->db->join('Users', 'Users.username = Volunteers.username', 'left');
         $query = $this->db->get();
         return $query;
     }

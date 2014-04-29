@@ -11,9 +11,10 @@ class Register_model extends CI_Model{
         // grab user input
         $username = $this->security->xss_clean($this->input->post('username'));
         $password = $this->security->xss_clean($this->input->post('password'));
+        $role = '0';
         
-        $sql = "INSERT INTO UserAuthentication(username, password) 
-        VALUES (".$this->db->escape($username).", ".$this->db->escape($password).")";
+        $sql = "INSERT INTO Users(username, password,role) 
+        VALUES (".$this->db->escape($username).", ".$this->db->escape($password).",".$this->db->escape($role).")";
 
         if($this->db->query($sql)==1){
 

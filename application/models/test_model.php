@@ -6,11 +6,11 @@ class Test_model extends CI_Model{
     }
     
     public function get_all_user_info(){
-        $query = $this->db->get('UserAuthentication');
+        $query = $this->db->get('Users');
         return $query;
     }
     function get_all_user(){
-    	$query = $this->db->get('UserAuthentication');
+    	$query = $this->db->get('Users');
     	return  $query;
     }
 }

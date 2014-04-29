@@ -5,9 +5,11 @@ class Quiz extends CI_Controller {
 	public function index($msg = NULL)
 	{
 		$data['msg'] = $msg;
+		$firstname = $this->session->userdata('firstname');
+    	$data['firstname'] = $firstname;
 		$quizid = $this->input->get('quizid',true);
 		$this->load->model('quiz_model');
-		$questions = $this->quiz_model->select_question();
+		$questions = $this->quiz_model->select_question_by_quizid($quizid);
 		$answers = $this->quiz_model->select_answer();
 		$data['answers'] = $answers->result();
 		$data['questions'] = $questions->result();
