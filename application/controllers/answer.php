@@ -24,6 +24,13 @@ class Answer extends CI_Controller {
 		$answerorder = $_POST['answerorder'];
 		$answer      = $_POST['answer'];
 
+		if (isset($_POST["answerorderdropdown"]) && !empty($_POST["answerorderdropdown"])) {
+		    $answerorder = $_POST["answerorderdropdown"];    
+		}
+		if (isset($_POST["answerdropdown"]) && !empty($_POST["answerdropdown"])) {
+		    $answer = $_POST["answerdropdown"];    
+		}
+
 
         $data = array(
                     'questionid'  => $questionid,

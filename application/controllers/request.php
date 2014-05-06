@@ -11,17 +11,14 @@ class Request extends CI_Controller {
 	function insert()
 	{
 		$uid = $this->session->userdata('uid');
-        // $uid 	   = $_POST['uid'];
     	$starttime = $_POST['starttime'];
     	$endtime   = $_POST['endtime'];
-	$date	   = $_POST['date'];
     	$comments  = $_POST['comments'];
 			
         $data = array(
                     'uid'       => $uid,
                     'starttime' => $starttime,
                     'endtime'   => $endtime,
-		    'date'	=> $date,
                     'comments'  => $comments
                     );
 

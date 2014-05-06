@@ -15,15 +15,16 @@ List of Quiz
 							<tr>
 							 	<th>Quiz ID</th>
 							 	<th>Title</th>	
+							 	<th></th>
 							</tr>
 							<?php 
 							foreach ($query as $quiz)
 							{
 							?>
 							<tr>
-								<td><a href="<?php echo base_url(); ?>quiz?quizid=<?php echo $quiz->quizid; ?>"><?php echo $quiz->quizid; ?></a></td>
+								<td><?php echo $quiz->quizid; ?></a></td>
 								<td><?php echo $quiz->quiztitle; ?></td>
-								<td>
+								<td><a href="<?php echo base_url(); ?>quiz?quizid=<?php echo $quiz->quizid; ?>">Edit</a></td>
 								</td>
 							<tr>
 							<?php
@@ -31,15 +32,17 @@ List of Quiz
 							?>
 						</table>
 					</div>
-					<div>
-						<form action="<?php echo base_url();?>quiz_new"><input type="submit" value="Added a new quiz"></form>
-					</div>
-
-					<div>
-						<form action="<?php echo base_url();?>test_list"><input type="submit" value="List of quiz"></form>
-					</div>
+					
 
 				</div>
+
+<div>
+	<form action="<?php echo base_url();?>quiz_new"><input type="submit" value="Added a new quiz"></form>
+<br/>
+	<form action="<?php echo base_url();?>test_list"><input type="submit" value="Check out all quiz"></form>
+</div>
+
+
 
 			</div>
 		

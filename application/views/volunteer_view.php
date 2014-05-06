@@ -15,10 +15,9 @@ Volunteers
 <?php echo $msg;?>
 
 <div class="well">
-<form action="<?php echo base_url();?>newvolunteer"><input type="submit" value="Added a new volunteer"></form>
 
 <div>
-	<table style="width:1200px">
+	<table style="width:1000px">
 		<tr>
 		 	<th>Email</th>
 		 	<th>Age</th>

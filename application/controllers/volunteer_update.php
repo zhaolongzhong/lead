@@ -4,11 +4,13 @@ class Volunteer_update extends CI_Controller {
 
 	public function index($msg = NULL)
 	{
-		// $vid = $_GET["vid"];
-		// $username = $this->input->get('username',true);
-        $username = $this->session->userdata('username');
+		$this->load->helper('form');
+        $username = $this->input->get('username',true);
+        $role = $this->session->userdata('role');
+        $data['role'] = $role;
         $firstname = $this->session->userdata('firstname');
         $data['firstname'] = $firstname;
+        $data['username'] = $username;
 		$data['msg'] = $username;
         $this->load->model('volunteer_model');
 		$query = $this->volunteer_model->select($username);
@@ -20,8 +22,25 @@ class Volunteer_update extends CI_Controller {
 
 	function update()
 	{
+        $this->load->helper('form');
 
-		$username = $this->input->get('username',true);
+        // $username = $this->input->get('username',true);
+        $username = $_POST['username'];
+        $path = './p/photo/'.$username;
+        if (!is_dir($path)){
+            mkdir($path, 0777, TRUE);    
+        }
+        $config['upload_path'] = $path;
+        $config['allowed_types'] = '*';
+        // $config['max_size']  = '100';
+        // $config['max_width']  = '1024';
+        // $config['max_height']  = '768';
+
+        $this->load->library('upload', $config);
+
+        $this->upload->do_upload();
+
+
         $username 		 = $_POST['username'];
         $password        = $_POST['password'];
     	$age 			 = $_POST['age'];
@@ -66,6 +85,13 @@ class Volunteer_update extends CI_Controller {
         }elseif($role=="user"){
             redirect('home_user');
         }
-		
 	}
+
+    function delete_image()
+    {
+        $username = $this->input->get('username',true);
+        $imagepath = $this->input->get('imagepath',true);
+        unlink($imagepath);
+        redirect('volunteer_update'.'?username='.$username);
+    }
 }

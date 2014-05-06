@@ -8,43 +8,23 @@
 
 
 
-<h2>
-The L.E.A.D. Institute Services
-</h2>
+<h1>
+What is Deafline Missouri?</h1>
 
-<div class="well">
+<div class="jumbotron">
+    
+    <div class="span4 pull-right no-border">
+       <img src="http://static.zephyrcharts.com/zhao/DeaflineLogo2.jpg" alt="Splash screen">
+     </div>
 
-The L.E.A.D. Institute Services
-Domestic Violence and Sexual Assault Programs:
-Crisis intervention to Deaf victims of domestic violence from skilled victim and court advocates
-A toll-free, 24-hour crisis hotline for Deaf victims of crimes to call for assistance.  This number is also for shelters, agencies, law enforcement and circuit courts to call for assistance with all Deaf and Hard of Hearing clients.
-Outpatient counseling for all Deaf victims of crimes and their families (this includes children)
-Advocacy for shelters and agencies when they need support in their communities
-</div>
+Deafline Missouri is a 24 hour resource and crisis line focused on providing services directly to Deaf, Hard of Hearing, and Deaf/blind individuals.  Deafline Missouri is also available for anyone seeking support for Deaf, Hard of Hearing, or Deaf/blind related issues. 
 
+<br><br>
 
-<h3>
-Drug and Alcohol Abuse Prevention Programs:
-
-</h3>
-<div class="well">
-
-Outpatient counseling services for Deaf individuals experiencing problems with substance abuse
-Collaboration and training provided for mental health agencies on how to better serve Deaf and Hard of Hearing clients
-A toll-free, 24-hour crisis hotline for Deaf individuals to call for support with family troubles, homelessness, loneliness and depression, and a wide variety of other problems.  The hotline is also for mental health agencies and hospitals to utilize when serving Deaf clients.<br><br>
-Teen Institute, a 5-day training camp that trains Deaf and Hard of Hearing youth, teaches them strategies for drug and alcohol abuse prevention as well as HIV/AIDS awareness and other issues confronting these students and their peers.  After this training camp, these students return to their communities with the tools necessary to promote educational programs dealing with these topics.
-</div>
-
-
-<h3>
-Trainings for hospitals and mental health agencies on how to work with Deaf individuals who are HIVpositive
-
-</h3>
-<div class="well">
-
-HIV/AIDS Awareness and Peer Educator Programs:
-Outpatient counseling for Deaf individuals with AIDS and support for their families
-A toll-free hotline for Deaf individuals to call for information on testing
+800-380-DEAF(3323)                                     <br>
+573-445-5108                                           <br>
+or text HAND to 839863                                 <br>
+*All lines voice and TTY accessible                    <br>
 
 </div>
 

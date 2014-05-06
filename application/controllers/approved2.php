@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Approved extends CI_Controller {
+class Approved2 extends CI_Controller {
 
 	public function index($msg = NULL)
 	{
@@ -48,7 +48,7 @@ class Approved extends CI_Controller {
 
 
 
-		$this->load->view('approved_view', $data);
+		$this->load->view('approved2_view', $data);
 	}
 
 	function approve()

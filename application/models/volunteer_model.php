@@ -25,6 +25,15 @@ class Volunteer_model extends CI_Model{
         $query = $this->db->get_where('Users', array('username' => $username));
         return $query;
     }
+
+    // function select_user_all_info($username){
+    //     $this->db->select('*');
+    //     $this->db->from('Volunteers');
+    //     $this->db->join('Users', 'Users.username = Volunteers.username');
+    //     $this->db->where('username', $username);
+    //     $query = $this->db->get();
+    //     return $query;
+    // }
     function update($data,$username)
     {
         $this->db->where('username', $username);

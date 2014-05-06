@@ -26,6 +26,7 @@ Password: </td><td><input type="password" name="password" size=25">
 </form>
 <a id="register" href="register">Register</a>
 
+<h3>Test accounts:</h3>
 
 <?php echo $msg;?>
 

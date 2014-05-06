@@ -7,15 +7,22 @@
 			<div id="content" class="span12">
 
 
+<h1>
+How Textline works...
+</h1>
 
-<h2>
-About The L.E.A.D. Institute
-</h2>
+<div class="jumbotron">
+    
+    <div class="span4 pull-right no-border">
+       <img src="http://static.zephyrcharts.com/zhao/photo4.PNG" alt="Splash screen">
+     </div>
 
-<div class="well">
-The mission of The L.E.A.D. Institute is to provide leadership through education, advocacy, crisis intervention services, counseling and other direct services for Deaf, hard of hearing, Deaf/blind, and late deafened victims, survivors, and their families, and the communities in which they live.
+Using your cell phone, enter the number 839863 as the recipient in your text message.<br>
+
+In the text box, type the word HAND.  Press send.<br>
+
+A trained crisis worker will be with you shortly.<br><br><br><br><br><br><br><br><br><br>
 </div>
-
 
 			</div>
 		

@@ -8,96 +8,72 @@
 
 
 
+
+<div class="jumbotron">
+	
+    <div class="span4 pull-right no-border">
+       <img src="http://static.zephyrcharts.com/zhao/MCLLOGO2.jpg" alt="Splash screen">
+     </div>
+       <h1>Missouri Crisis Line</h1><br>
+	   
+   	<p>
+<h3>Do you need help?</h3>
+
+<h3>The Missouri Crisis Line is a safe, confidential place to share.  Let us help you.</h3>
+
+<h2>1-888-761-4357​</h2>
+<h4>or</h4>
+<h2>text HAND to 839863 </h2>
+<h5>(Standard Text Message Rates Apply)</h5>
+
+<h3>Free 24 hours a day/365 days a year.</h3>
+     </div>
+
+<h2>Deafline</h2>
+<div class="jumbotron">
+
+   		Deafline Missouri is a 24 hour resource and crisis line focused on providing services directly to Deaf, Hard of Hearing, and Deaf/blind individuals.  Deafline Missouri is also available for anyone seeking support for Deaf, Hard of Hearing, or Deaf/blind related issues.
+   	</p>
+</div> 
+
+
+  
+
 <h2>
-	Notes
+	In the news
 </h2>
 
-<div class="well">
-Teen Institute Sponsors:
-Hy-Vee Rockbridge
-Pi Beta Phi Sorority, Missouri Alpha 
-Papa Murphy's Pizza
-Central Dairy
-Representative Timothy Jones
-Independent Physicians
 
-</div>
-<div class="well">
+<div class="row">
+	 	<div class="col-lg-6">
+	 		<div class="well">
+	 			 <video width="480" height="360" controls="controls" data-jsb_added="xkz1e69jgv" autoplay><source src="http://www.missouricrisisline.com/files/KOMU_Texting_Service.mov" type="video/mp4"></video>
+	 		</div>
+	 	</div>
+	
+	 	<div class="col-lg-6">
+	 		<div class="well">
+                <br><br><br><br>
+       <h1> Missouri Crisis Line        </h1>
+       <h1> in the                      </h1>
+       <h1> NEWS!!!                     </h1>
+       <br><br><br><br><br>
+	 		</div>
+	 	</div>
 
-The L.E.A.D. Institute
- (573)445-5005(V/TTY)
-(573)303-5604(VP)
 
-Home
+	 </div>
 
-Our Mission
 
-Victim Services
+<h2>Contact</h2>
+<div class="jumbotron">
 
-Services
+<h3>Interested in becoming a volunteer at MCL?</h3>
 
-Sign Language Class
-
-Teen Institute
-
-Community Collaboration
-
-Contact Us
-
-Website Designed by The L.E.A.D. Institute © 2014 at Homestead™ Create a Website and List Your Business
-
-Contact Us
-
-The L.E.A.D. Institute ® 2502 W. Ash, Columbia, MO 65203
-Would you like more information?
- 
-
-DOMESTIC VIOLENCE, 
-SEXUAL VIOLENCE
-AND 
-CHILD ABUSE 
-PROGRAMS
-
-VICTIM ASSISTANCE
-
-VICTIM ADVOCACY
-
-24-HOUR CRISIS LINE
-AND 
-TEXTLINE
-
-COMMUNITY COLLABORATION
-
-TEEN INSTITUTE 
-SUMMER CAMP
-</div>
-
-<div class="well">
-news 1
-
-</div>
-<div class="well">
-news 2
-
-</div>
-
-<h1>News</h1>
-
-<div class="newsPost">
-
-<?php 
-		foreach ($query as $newspost)
-		{
-	?>
-		
-			<h2><?php echo $newspost->title; ?></h2>
-                        <p><?php echo $newspost->message; ?></p>
-                        <p>Created by <?php echo $newspost->uid; ?> on <?php echo $newspost->date; ?></p>
-                        <br /> 
-	<?php
-		}
-	?>
-
+<a href="http://babbage.cs.missouri.edu/~cs4380sp14grp12/lead/contact/"><button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+    Contact us</span>
+  </button></a> 
+</div>   
 
 
 			</div>

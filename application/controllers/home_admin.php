@@ -8,6 +8,9 @@ class Home_Admin extends CI_Controller {
 		$data['role'] = $role;
 		$firstname = $this->session->userdata('firstname');
 		$data['firstname'] = $firstname;
+		$this->load->model('newspost_model');
+		$query = $this->newspost_model->get_all_newsposts();
+		$data['query'] = $query->result();
 		$this->load->view('home_admin',$data);
 	}
 }

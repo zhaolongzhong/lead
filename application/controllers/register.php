@@ -53,7 +53,7 @@ class Register extends CI_Controller {
 		$this->load->model('register_model');
 		$result = $this->register_model->register();
 		if(!$result){
-			$msg = '<font color=red>Register failed.</font><br />';
+			$msg = '<font color=red>Register failed. This username has already been registered.</font><br />';
 			$this->index($msg);
 		}else{
 			redirect('home');

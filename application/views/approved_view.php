@@ -48,8 +48,108 @@ Time Sheet Request List</h2>
 	</table><?php echo $msg; ?>
 </div>
 
-</div>
 
+
+
+</div>
+<!-- <div class="well">
+        <div>
+            <table style="width:1000px">
+                <tr>
+                     <th>User ID</th>
+                     <th>User Name</th>
+
+                </tr>
+                <?php 
+                foreach ($userinfo as $user)
+                {
+                ?>
+                <tr>
+                    <td><?php echo $user->uid; ?></td>
+                    <td><?php echo $user->username; ?></td>
+
+                    <td>
+
+                    </td>
+                <tr>
+                <?php
+                }
+                ?>
+            </table>
+        </div>
+    </div> -->
+    
+    <div class="well">
+    
+        
+        
+<!-- <?php print_r($stack); ?> -->
+
+<div id="container" style="height: 400px"></div>
+
+<script type="text/javascript">
+
+
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'pie',
+            options3d: {
+				enabled: true,
+                alpha: 45
+            }
+        },
+        title: {
+            text: 'Hourly portions charts'
+        },
+
+        plotOptions: {
+            pie: {
+                innerSize: 100,
+                depth: 45
+            }
+        },
+        series: [{
+            name: 'Total hours worked',
+            data: [
+                
+				<?php 
+				foreach ($stack as $user)
+				{
+				echo "['" . $user[1] . "', " . $user[2] . "],";
+            }
+				?>
+                
+                
+                
+            ]
+        }]
+    });
+});
+
+
+</script>
+
+
+
+
+
+
+                <!-- <?php 
+                foreach ($stack as $user)
+                {
+                ?>
+                <tr>
+                    <td><?php echo $user[1]; ?></td>
+                    <td><?php echo $user[2]; ?></td>
+
+                    <td>
+
+                    </td>
+                <tr>
+                <?php
+                }
+                ?> -->
 
 			</div>
 		

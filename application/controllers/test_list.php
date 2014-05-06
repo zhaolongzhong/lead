@@ -6,10 +6,11 @@ class Test_list extends CI_Controller {
 	{
 		$data['msg'] = $msg;
 		$firstname = $this->session->userdata('firstname');
+		$role = $this->session->userdata('role');
+		$data['role'] = $role;
 		$data['firstname'] = $firstname;
 		$this->load->model('quiz_model');
 		$query = $this->quiz_model->get_quiz_table();
-		
 		$data['query'] = $query->result();
 
 		$this->load->view('test_list_view', $data);

@@ -11,6 +11,9 @@ class Home_User extends CI_Controller {
 		$data['firstname'] = $firstname;
 		$data['role'] = $role;
 		$data['username'] = $username;
+		$this->load->model('newspost_model');
+		$query = $this->newspost_model->get_all_newsposts();
+		$data['query'] = $query->result();
 		$this->load->view('home_user',$data);
 	}
 }

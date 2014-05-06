@@ -1,10 +1,18 @@
-<?php include './assets/template/header_user.php'; ?>
+<?php 
+if($role == 'user'){
+	include './assets/template/header_user.php'; 
+}elseif ($role == 'admin') {
+	include './assets/template/header_admin.php';
+}
+
+?>
+
 <div class="container">
 		<div class="row">
 				
 			<div id="content" class="span12">
 <h2>
-List of Quiz
+List of Quizes
 </h2>
 <div class="well">
 
@@ -16,7 +24,7 @@ List of Quiz
 <div>
 	<table style="width:1200px">
 		<tr>
-		 	<th>Quiz ID</th>
+		 	<th>Quiz Number</th>
 		 	<th>Title</th>	
 		 	<th></th>
 		</tr>

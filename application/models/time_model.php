@@ -10,16 +10,56 @@ class Time_model extends CI_Model{
         return $query;
     }
 
-    function request($data){
+    function request($data)
+    {
     	$this->db->insert('TimeSheetRequests',$data);
     	$this->db->insert('TimeSheetApproved',$data);
     }
-    function approved($timesheetid,$data){
+    function approved($timesheetid,$data)
+    {
         $this->db->where('timesheetid', $timesheetid);
         $this->db->update('TimeSheetApproved', $data);
     }
-    function select($timesheetid){
+    function select($timesheetid)
+    {
         $query = $this->db->get_where('TimeSheetApproved', array('timesheetid' =>$timesheetid));
+        return $query;
+    }
+    function insert_schedule($data)
+    {
+        $this->db->insert('Schedule',$data);
+    }
+    function select_schedule(){
+        $this->db->order_by("username","asc");  
+        $query = $this->db->get('Schedule');
+        return $query;
+    }
+    function delete_schedule($sid)
+    {
+        $this->db->where('sid',$sid);
+        $this->db->delete('Schedule');
+    }
+    function select_schedule_by_username($username)
+    {
+        $this->db->order_by("username","asc"); 
+        $query = $this->db->get_where('Schedule', array('username' =>$username));
+        return $query;
+
+    }
+    function select_userid()
+    {
+        $this->db->select('*');
+        $this->db->from('Users');
+        $this->db->join('TimeSheetApproved', 'TimeSheetApproved.uid = Users.uid','left');
+        $query = $this->db->get();
+        return $query;
+    }
+    function select_distinct_user()
+    {
+        $sql = "select distinct(uid) from TimeSheetApproved";
+        $query = $this->db->query($sql);
+
+        // $query = $this->db->get('TimeSheetApproved');
         return $query;
     }
 }

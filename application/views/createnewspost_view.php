@@ -15,7 +15,7 @@
 <table>
 <form method="POST" action="<?php echo base_url();?>createnews_post_controller/insert">
 <tr><td>
-Post being created by </td><td> User ID:<?php echo $this->session->userdata('uid');?>
+Post being created by </td><td><?php echo $this->session->userdata('firstname');echo " "; $this->session->userdata('lastname');?>
 </tr></td>
 <tr><td>
 Title: </td><td><input type="text" name="title"/>

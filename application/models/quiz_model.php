@@ -78,6 +78,10 @@ class Quiz_model extends CI_Model{
         $this->db->where('answerid', $answerid);
         $this->db->delete('Answer');
     }
+
+    function insert_useranswer($data){
+        $this->db->insert('UserAnswer',$data);
+    }
     // function select($username)
     // {
     //     $query = $this->db->get_where('Volunteers', array('username' =>$username));

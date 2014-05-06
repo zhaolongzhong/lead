@@ -1,21 +1,28 @@
-<?php include './assets/template/header_user.php'; ?>
+<?php 
+	if($role=='user'){
+		include './assets/template/header_user.php';
+	}elseif ($role=='admin') {
+		include './assets/template/header_admin.php';
+	} ?>
 <div class="container">
 		<div class="row">
 				
 			<div id="content" class="span12">
 <h2>
 Update a volunteer
+<?php echo $username;?>
 </h2>
 <div class="well">
 
 <?php echo $msg;?>
-<form method="POST" action="<?php echo base_url();?>volunteer_update/update
-	">
+<?php echo form_open_multipart('volunteer_update/update');?>
+
 <table>
 		<?php 
 		foreach ($query as $volunteer)
 		{
 			foreach ($users as $user) {
+
 		?>
 <tr><td>
 Email: 
@@ -69,11 +76,34 @@ AltPhone:
 		}
 		?>
 <tr><td>
+<?php if (isset($volunteer)) {$directory = 'p/photo/'.$volunteer->username . '/'; 
+
+
+$images = glob($directory.'*.{jpg,png,gif}',GLOB_BRACE);}
+?>
+<img src="<?php if(!empty($images)){echo $images[0];}?>" alt="No Photo" height="100" width="100"><br/>
+<?php
+if(!empty($images)){
+	foreach($images as $image)
+	{
+?>
+<img src="<?php echo $image;?>" alt="No Photo" height="42" width="42"><a href="volunteer_update/delete_image?imagepath=<?php echo $image;?>&username=<?php echo $username;?>">Delete</a>
+<?php
+	}
+}
+?>
+
+	<input type="file" name="userfile" size="20" />
 <input type="submit" value="Update">
 </td></tr>
 
 </table>
 </form>
+
+
+
+
+
 
 
 
