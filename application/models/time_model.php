@@ -54,6 +54,23 @@ class Time_model extends CI_Model{
         $query = $this->db->get();
         return $query;
     }
+	
+	function select_thisweek($thismonday,$thissunday)
+	{
+		//$sql = "SELECT * FROM TimeSheetApproved T WHERE T.startime >=". $lastsunday." AND T.endtime <= ".$nextmonday;
+		//$sql = "select distinct(uid) from TimeSheetApproved";
+        //$query = $this->db->query($sql);
+        
+		$this->db->select('*');
+		$this->db->from('Users');
+		$this->db->join('TimeSheetApproved', 'TimeSheetApproved.uid = Users.uid','left');
+		$this->db->where('starttime >=', $thismonday);
+		$this->db->where('endtime <=', $thissunday);
+		//$this->db->where('starttime >=', '2014-05-05 00:00:00');
+		//$this->db->where('endtime <=', '2014-05-11 23:59:59');
+		$query = $this->db->get();
+		return $query;
+	}
     function select_distinct_user()
     {
         $sql = "select distinct(uid) from TimeSheetApproved";

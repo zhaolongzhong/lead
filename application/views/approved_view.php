@@ -7,6 +7,22 @@
 			<div id="content" class="span12">
 
 
+<div class="well">
+
+<?php foreach($week as $key=>$value){
+    echo $key; ?><br/><?php
+
+    foreach ($value as $key2 => $value2) { 
+        ?><br/>userid: <?php 
+        echo $value2[0];?>&nbsp;username: <?php 
+        echo $value2[1];?>&nbsp;hours: <?php 
+        echo $value2[2];
+    }
+    ?><br/><?php
+}?>
+
+</div>
+
 
 <h2>
 Time Sheet Request List</h2>
@@ -25,7 +41,7 @@ Time Sheet Request List</h2>
 			<th>Action</th>
 		</tr>
 		<?php 
-		foreach ($query as $request)
+		foreach ($thisweek as $request)
 		{
 		?>
 		<tr>
