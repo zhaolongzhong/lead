@@ -23,26 +23,31 @@ class Login_model extends CI_Model{
         {
             // If there is a user, then create session data
             $row = $query->row();
+            $this->load->model('volunteer_model');
+            $query = $this->volunteer_model->select($username);
+            foreach ($query->result() as $row2) {
+                $firstname = $row2->fname;
+            }
             if($row->role == 0){
                 $data=array(
                     'role' => "user",
                     'uid' => $row->uid,
                     'username' => $row->username,
-                    'firstname' => $row->firstname,
+                    'firstname' => $firstname,
                     'validate' => true);
             }elseif ($row->role == 1) {
                 $data=array(
                     'role' => "admin",
                     'uid' => $row->uid,
                     'username' => $row->username,
-                    'firstname' => $row->firstname,
+                    'firstname' => $firstname,
                     'validate' => true);
             }elseif ($row->role == 2) {
                 $data=array(
                     'role' => "superadmin",
                     'uid' => $row->uid,
                     'username' => $row->username,
-                    'firstname' => $row->firstname,
+                    'firstname' => $firstname,
                     'validate' => true);
             }
 

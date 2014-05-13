@@ -15,6 +15,14 @@ class Volunteer extends CI_Controller {
 		$this->load->view('volunteer_view', $data);
 	}
 
+	function approve()
+	{
+		$username = $this->input->get('username',true);
+		$this->load->model('volunteer_model');
+        $this->volunteer_model->update_approve($username);
+        $this->index();
+	}
+
 	function delete()
 	{
 		$id = $this->uri->segment(3);

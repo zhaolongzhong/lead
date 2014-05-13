@@ -27,7 +27,7 @@
     <table>
 
     <tr><td>
-    Requested by </td><td> User ID:<?php echo $this->session->userdata('uid');?>
+    Requested by </td><td> User ID:<?php echo $this->session->userdata('fname');?>
     </tr></td>
     <tr><td>
     Start Time: </td><td>

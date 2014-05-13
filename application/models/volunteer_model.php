@@ -44,6 +44,13 @@ class Volunteer_model extends CI_Model{
         $this->db->where('username', $username);
         $this->db->update('Users', $data); 
     }
+    function update_approve($username)
+    {
+        $this->db->where('username', $username);
+        $this->db->update('Volunteers', $arrayName = array('approved' => 1)); 
+        // $sql = "update Volunteers set approved = 1 where username =".$username;
+        // $this->db->query($sql);
+    }
     function delete($username)
     {
     	$this->db->where('username',$username);

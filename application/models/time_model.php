@@ -61,14 +61,21 @@ class Time_model extends CI_Model{
 		//$sql = "select distinct(uid) from TimeSheetApproved";
         //$query = $this->db->query($sql);
         
-		$this->db->select('*');
-		$this->db->from('Users');
-		$this->db->join('TimeSheetApproved', 'TimeSheetApproved.uid = Users.uid','left');
-		$this->db->where('starttime >=', $thismonday);
-		$this->db->where('endtime <=', $thissunday);
-		//$this->db->where('starttime >=', '2014-05-05 00:00:00');
-		//$this->db->where('endtime <=', '2014-05-11 23:59:59');
-		$query = $this->db->get();
+
+        $this->db->select('*')->select('TimeSheetApproved.uid')->from('TimeSheetApproved')
+                ->join('Users', 'Users.uid = TimeSheetApproved.uid', 'LEFT')
+                ->join('Volunteers', 'Volunteers.username = Users.username', 'LEFT');
+                $query = $this->db->get();
+
+
+		// $this->db->select('*');
+		// $this->db->from('Users');
+		// $this->db->join('TimeSheetApproved', 'TimeSheetApproved.uid = Users.uid','left');
+		// $this->db->where('starttime >=', $thismonday);
+		// $this->db->where('endtime <=', $thissunday);
+		// //$this->db->where('starttime >=', '2014-05-05 00:00:00');
+		// //$this->db->where('endtime <=', '2014-05-11 23:59:59');
+		// $query = $this->db->get();
 		return $query;
 	}
     function select_distinct_user()

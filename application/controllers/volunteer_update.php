@@ -11,7 +11,7 @@ class Volunteer_update extends CI_Controller {
         $firstname = $this->session->userdata('firstname');
         $data['firstname'] = $firstname;
         $data['username'] = $username;
-		$data['msg'] = $username;
+		$data['msg'] = $msg;
         $this->load->model('volunteer_model');
 		$query = $this->volunteer_model->select($username);
 		$data['query'] = $query->result();
@@ -69,9 +69,7 @@ class Volunteer_update extends CI_Controller {
                     );
 
         $data_user = array(
-                    'password' => $password,
-                    'firstname' => $fname,
-                    'lastname' =>$lname
+                    'password' => $password
                     );
 
         $this->load->model('volunteer_model');
@@ -81,9 +79,9 @@ class Volunteer_update extends CI_Controller {
 		$msg = 'Update successully!';
         $role = $this->session->userdata('role');
         if($role == "admin"){
-            redirect('home_admin');
+            redirect('volunteer_update'.'?username='.$username);
         }elseif($role=="user"){
-            redirect('home_user');
+            redirect('volunteer_update'.'?username='.$username);
         }
 	}
 

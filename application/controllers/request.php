@@ -5,7 +5,18 @@ class Request extends CI_Controller {
 	public function index($msg = NULL)
 	{
 		$data['msg'] = $msg;
-		$this->load->view('request_view', $data);
+		$username = $this->session->userdata('username');
+		$this->load->model('volunteer_model');
+		$query = $this->volunteer_model->select($username);
+		$approved = 0;
+		foreach($query->result() as $row){
+			$approved = $row->approved;
+		}
+		if($approved == 0){
+			$this->load->view('request_fail_view', $data);
+		}else{
+			$this->load->view('request_view', $data);
+		}
 	}
 
 	function insert()

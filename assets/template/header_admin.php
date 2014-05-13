@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="http://sandbox.scriptiny.com/table-sorter/style.css" />
 
 <title>Missouri Crisis Line</title>
 
